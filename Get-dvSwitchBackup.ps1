@@ -1,12 +1,12 @@
 <#
 
 .SYNOPSIS
-    Sets the resource pool shares per VM
+    Gets an export of dvSwitch Config
 
 .DESCRIPTION
-    This script will connect to your vCenter server and scan the resource pools.
-    It will ask for a per VM share value for CPU and RAM, these will then be calculated together and set on the 
-    resource pools giving the correct shares value
+    This script will connect to your vCenter server and get a backup of all dvSwitches. 
+    It will take 3 backups: one of PortGroups, one of the dvSwitch and one with both PortGroups and dvSwitch
+    these are then saved with the relevant date and name. 
 
 .PARAMETER vcenter
     FQDN for your vCenter server
@@ -14,7 +14,7 @@
     Backup location of the files
 
 .EXAMPLE
-    ./Get-dvSwitchBackups.ps1 -vcenter "vcenter.domain.com"
+    .\Get-dvSwitchBackups.ps1 -vcenter "vcenter.domain.com" -FilePath "C:\backup\location\"
  
 .NOTES
     Script created by Steven Marks from spottedhyena.co.uk
